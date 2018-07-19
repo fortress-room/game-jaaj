@@ -29,9 +29,9 @@ func _ready():
 	print(item_slots.size())
 	print(items.size())
 	
-	
 	add_item('banana', 2)
 	add_item('maracuja', 1)
+	remove_item('banana', 2)
 
 func _physics_process(delta):
 	
@@ -60,13 +60,20 @@ func _physics_process(delta):
 func _change_selected(selected_slot):
 	print(items)
 	selected_slot_node = item_slots[selected_slot]
-	#print(selected_slot)
 	$ColorRect.set_global_position(selected_slot_node.get_global_position())
 
 func add_item(item_id, amount):
 	if items.size() < item_slots.size():
-		for slot in items:
-			if slot.has(item_id):
-				items[item_id] += amount
-			else:
-				items[item_id] = amount
+		print('pass 1 ok')
+		if items.has(item_id):
+			items[item_id] += amount
+		else:
+			items[item_id] = amount
+	else:
+		print('you cant carry anymore')
+
+func remove_item(item_id, amount):
+	if items.has(item_id):
+		items[item_id] -= amount
+		if items[item_id] == 0:
+			items.erase(item_id)
