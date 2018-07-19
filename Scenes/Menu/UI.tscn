@@ -1,0 +1,338 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Controllers/InventoryController.gd" type="Script" id=1]
+
+[node name="UI" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Inventory" type="Control" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+
+[node name="Background" type="PanelContainer" parent="Inventory" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 176.0
+margin_bottom = 230.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="VSeparator" type="VBoxContainer" parent="Inventory/Background" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 169.0
+margin_bottom = 223.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="L1" type="HBoxContainer" parent="Inventory/Background/VSeparator" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 162.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Slot" type="Panel" parent="Inventory/Background/VSeparator/L1" index="0" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 51.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="Slot2" type="Panel" parent="Inventory/Background/VSeparator/L1" index="1" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 55.0
+margin_right = 106.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Slot3" type="Panel" parent="Inventory/Background/VSeparator/L1" index="2" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_right = 162.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="L2" type="HBoxContainer" parent="Inventory/Background/VSeparator" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 55.0
+margin_right = 162.0
+margin_bottom = 106.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Slot4" type="Panel" parent="Inventory/Background/VSeparator/L2" index="0" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 51.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Slot5" type="Panel" parent="Inventory/Background/VSeparator/L2" index="1" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 55.0
+margin_right = 106.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Slot6" type="Panel" parent="Inventory/Background/VSeparator/L2" index="2" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_right = 162.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="L3" type="HBoxContainer" parent="Inventory/Background/VSeparator" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 110.0
+margin_right = 162.0
+margin_bottom = 161.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Slot7" type="Panel" parent="Inventory/Background/VSeparator/L3" index="0" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 51.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Slot8" type="Panel" parent="Inventory/Background/VSeparator/L3" index="1" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 55.0
+margin_right = 106.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Slot9" type="Panel" parent="Inventory/Background/VSeparator/L3" index="2" groups=[
+"slot",
+]]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 110.0
+margin_right = 162.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="L4" type="HBoxContainer" parent="Inventory/Background/VSeparator" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 165.0
+margin_right = 162.0
+margin_bottom = 216.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 0
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="Panel" type="PanelContainer" parent="Inventory/Background/VSeparator/L4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 162.0
+margin_bottom = 51.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="ColorRect" type="ColorRect" parent="Inventory" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 58.0
+margin_bottom = 58.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.964844, 0.764178, 0.0791473, 0.397804 )
+_sections_unfolded = [ "Rect" ]
+
+
