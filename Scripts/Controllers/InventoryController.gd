@@ -48,6 +48,7 @@ func _ready():
 	# Test callings
 	add_item('Madeira', 2)
 	add_item('Madeira', 1)
+	add_item('Pedregulho', 1)
 	#remove_item('Pedregulho', 2)
 
 func _physics_process(delta):
@@ -122,12 +123,8 @@ func remove_item(item_id, amount):
 
 func _update_inventory(added):
 	if added != null:
-		for i in items.size():
-			for item_amount in items[i].values():
-				print(items[i][added])
-				for slot in item_slots:
-					if items[i][added] == item_amount:
-						slot.get_child(0).set_text(str(items[i][added]))
-						slot.get_child(0).show()
-						return
-				#print(items[added])
+		for slot in items.size():
+			print(items[slot])
+		
+		
+		

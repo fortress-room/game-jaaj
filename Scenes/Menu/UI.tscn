@@ -120,7 +120,7 @@ _sections_unfolded = [ "Size Flags" ]
 
 [node name="Amount" parent="Inventory/Background/VSeparator/L1/Slot2" index="0" instance=ExtResource( 2 )]
 
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Slot3" type="Panel" parent="Inventory/Background/VSeparator/L1" index="2" groups=[
 "slot",
