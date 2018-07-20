@@ -1,0 +1,18 @@
+{
+  	"item_id": {
+		"Madeira": 0,
+		"Pedregulho": 1,
+		"Minério de ferro": 2,
+		"Madeira Refinada": 3,
+		"Pedra Processada": 4,
+		"Ferro": 5
+	},
+	"item_weight": {
+		"Madeira": 50,
+		"Pedregulho": 80,
+		"Minério de ferro": 100,
+		"Madeira Refinada": 75,
+		"Pedra Processada": 150,
+		"Ferro": 250
+	}
+}
