@@ -9,7 +9,7 @@ var selected_slot_node
 var selected_slot_index
 var current_line
 
-var items = {}
+var items = [{}, {}, {}, {}, {}, {}, {}, {}, {}]
 
 func _ready():	
 	selected_slot_index = 0
@@ -24,10 +24,9 @@ func _ready():
 	for child in line3_slots.get_children():
 		item_slots.append(child)
 	
+	
 	selected_slot_node = item_slots[selected_slot_index]
 	$ColorRect.set_global_position(selected_slot_node.get_global_position())
-	print(item_slots.size())
-	print(items.size())
 	
 	add_item('banana', 2)
 	add_item('maracuja', 1)
@@ -63,17 +62,26 @@ func _change_selected(selected_slot):
 	$ColorRect.set_global_position(selected_slot_node.get_global_position())
 
 func add_item(item_id, amount):
-	if items.size() < item_slots.size():
-		print('pass 1 ok')
-		if items.has(item_id):
-			items[item_id] += amount
-		else:
-			items[item_id] = amount
-	else:
-		print('you cant carry anymore')
+	for i in items.size():
+		if items[i].empty():
+			items[i] = {str(item_id): amount}
+			return
+		elif items.has(items[i]):
+			for value in items[i].values():
+				items[i] = {item_id: value + amount}
+				return
+			
+	"""for item in items:
+		if item.empty():
+			items[item] = {item_id : amount}
+		elif items.has(item_id):
+			items[item_id] += amount"""
 
 func remove_item(item_id, amount):
-	if items.has(item_id):
-		items[item_id] -= amount
-		if items[item_id] == 0:
-			items.erase(item_id)
+	for i in items.size():
+		if items[i].empty():
+			for value in items[i].values():
+				items[i] = {item_id: value - amount}
+				if value == 0:
+					items[i] = {}
+					return
