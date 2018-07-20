@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Controllers/InventoryController.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Menu/ItemAmountLabel.tscn" type="PackedScene" id=2]
 
 [node name="UI" type="CanvasLayer" index="0"]
 
@@ -96,6 +97,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Rect", "Size Flags" ]
 
+[node name="Amount" parent="Inventory/Background/VSeparator/L1/Slot" index="0" instance=ExtResource( 2 )]
+
 [node name="Slot2" type="Panel" parent="Inventory/Background/VSeparator/L1" index="1" groups=[
 "slot",
 ]]
@@ -115,6 +118,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Size Flags" ]
 
+[node name="Amount" parent="Inventory/Background/VSeparator/L1/Slot2" index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Rect" ]
+
 [node name="Slot3" type="Panel" parent="Inventory/Background/VSeparator/L1" index="2" groups=[
 "slot",
 ]]
@@ -133,6 +140,12 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Size Flags" ]
+
+[node name="Amount2" parent="Inventory/Background/VSeparator/L1/Slot3" index="0" instance=ExtResource( 2 )]
+
+margin_left = 4.0
+margin_right = 49.0
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="L2" type="HBoxContainer" parent="Inventory/Background/VSeparator" index="1"]
 
@@ -170,6 +183,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Size Flags" ]
 
+[node name="Amount3" parent="Inventory/Background/VSeparator/L2/Slot4" index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Margin", "Rect" ]
+
 [node name="Slot5" type="Panel" parent="Inventory/Background/VSeparator/L2" index="1" groups=[
 "slot",
 ]]
@@ -189,6 +206,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Size Flags" ]
 
+[node name="Amount4" parent="Inventory/Background/VSeparator/L2/Slot5" index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Margin", "Rect" ]
+
 [node name="Slot6" type="Panel" parent="Inventory/Background/VSeparator/L2" index="2" groups=[
 "slot",
 ]]
@@ -207,6 +228,10 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Size Flags" ]
+
+[node name="Amount5" parent="Inventory/Background/VSeparator/L2/Slot6" index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="L3" type="HBoxContainer" parent="Inventory/Background/VSeparator" index="2"]
 
@@ -244,6 +269,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Size Flags" ]
 
+[node name="Amount6" parent="Inventory/Background/VSeparator/L3/Slot7" index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Margin", "Rect" ]
+
 [node name="Slot8" type="Panel" parent="Inventory/Background/VSeparator/L3" index="1" groups=[
 "slot",
 ]]
@@ -263,6 +292,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Size Flags" ]
 
+[node name="Amount7" parent="Inventory/Background/VSeparator/L3/Slot8" index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Margin", "Rect" ]
+
 [node name="Slot9" type="Panel" parent="Inventory/Background/VSeparator/L3" index="2" groups=[
 "slot",
 ]]
@@ -281,6 +314,12 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 _sections_unfolded = [ "Size Flags" ]
+
+[node name="Amount8" parent="Inventory/Background/VSeparator/L3/Slot9" index="0" instance=ExtResource( 2 )]
+
+margin_left = 4.0
+margin_right = 49.0
+_sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="L4" type="HBoxContainer" parent="Inventory/Background/VSeparator" index="3"]
 

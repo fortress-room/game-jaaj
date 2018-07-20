@@ -29,12 +29,15 @@ func _ready():
 	
 	for child in line1_slots.get_children():
 		item_slots.append(child)
+		child.get_child(0).hide()
 	
 	for child in line2_slots.get_children():
 		item_slots.append(child)
+		child.get_child(0).hide()
 	
 	for child in line3_slots.get_children():
 		item_slots.append(child)
+		child.get_child(0).hide()
 	
 	
 	selected_slot_node = item_slots[selected_slot_index]
@@ -90,16 +93,16 @@ func add_item(item_id, amount):
 	
 	for i in items.size():
 		if items[i].empty():
-			items[i] = {str(item_id): amount}
+			items[i] = {item_id : amount}
 			current_weight += json["item_weight"][item_id] * amount
-			print(current_weight)
+			_update_inventory(item_id)
 			return
 		else:
 			for key in items[i].keys():
 				if key == item_id:
 					for value in items[i].values():
-						print('going here')
 						items[i] = {item_id: value + amount}
+						_update_inventory(item_id)
 						return
 
 	
@@ -116,3 +119,15 @@ func remove_item(item_id, amount):
 					# Clears slot if no more items of this type
 					items[item] = {}
 					return
+
+func _update_inventory(added):
+	if added != null:
+		for i in items.size():
+			for item_amount in items[i].values():
+				print(items[i][added])
+				for slot in item_slots:
+					if items[i][added] == item_amount:
+						slot.get_child(0).set_text(str(items[i][added]))
+						slot.get_child(0).show()
+						return
+				#print(items[added])
