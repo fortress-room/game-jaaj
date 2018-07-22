@@ -14,7 +14,7 @@ var selected_slot_index
 var current_line
 
 # Weight handling:
-var maximum_weight = 2500
+var maximum_weight = 5000
 var current_weight = 0
 
 
@@ -46,7 +46,7 @@ func _ready():
 	$ColorRect.set_global_position(selected_slot_node.get_global_position()) # TODO: CHANGES TO ACTUAL SPRITE
 	
 	# Test callings
-	add_item('Madeira', 2)
+	add_item('Madeira', 1)
 	add_item('Madeira', 1)
 	add_item('Pedregulho', 1)
 	remove_item('Pedregulho', 1)
@@ -84,6 +84,11 @@ func _change_selected(selected_slot):
 	selected_slot_node = item_slots[selected_slot]
 	$ColorRect.set_global_position(selected_slot_node.get_global_position())
 
+"""
+IMPORTANT !!!!
+TODO: HANDLE TO NOT DESTROY ITEM IF IT PASS MAXIMUM_WEIGHT VALUE
+"""
+
 # Add item function
 func add_item(item_id, amount):
 	
@@ -94,27 +99,42 @@ func add_item(item_id, amount):
 	
 	
 	for i in items.size():
-		if items[i].empty():
+		var item_weight = json["item_weight"][item_id] * amount
+		
+		if items[i].empty() and (current_weight + item_weight < maximum_weight):
 			items[i] = {item_id : amount}
-			current_weight += json["item_weight"][item_id] * amount
+			current_weight += item_weight * amount
 			_update_inventory(item_id)
 			return
-		else:
+		elif (current_weight + item_weight <= maximum_weight):
 			for key in items[i].keys():
 				if key == item_id:
 					for value in items[i].values():
+						current_weight += item_weight * amount
 						items[i] = {item_id: value + amount}
 						_update_inventory(item_id)
 						return
-
+		elif (current_weight + item_weight > maximum_weight):
+			print("You can't carry more items!!!") # TODO: handle in-game error
+	
+	file.close()
 	# TODO: Proper handling errors
 
 # Remove item function
 func remove_item(item_id, amount):
+	
+	var file = File.new()
+	file.open("res://Resources/items.json", file.READ)
+	var json = file.get_as_text()
+	json = parse_json(json)
+	
+	var item_weight = json["item_weight"][item_id] * amount
+	
 	for item in items.size():
 		if items[item].has(item_id):
 			for value in items[item].values():
 				items[item] = {item_id : value - amount}
+				current_weight -= item_weight
 				_update_inventory(item_id)
 				if (value - amount) == 0:
 					# Clears slot if no more items of this type
