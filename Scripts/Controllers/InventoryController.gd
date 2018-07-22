@@ -49,6 +49,7 @@ func _ready():
 	add_item('Madeira', 2)
 	add_item('Madeira', 1)
 	add_item('Pedregulho', 1)
+	remove_item('Pedregulho', 1)
 	#remove_item('Pedregulho', 2)
 
 func _physics_process(delta):
@@ -106,8 +107,6 @@ func add_item(item_id, amount):
 						_update_inventory(item_id)
 						return
 
-	
-	# TODO: Proper handling weights
 	# TODO: Proper handling errors
 
 # Remove item function
@@ -116,15 +115,21 @@ func remove_item(item_id, amount):
 		if items[item].has(item_id):
 			for value in items[item].values():
 				items[item] = {item_id : value - amount}
+				_update_inventory(item_id)
 				if (value - amount) == 0:
 					# Clears slot if no more items of this type
 					items[item] = {}
 					return
 
-func _update_inventory(added):
-	if added != null:
+func _update_inventory(item):
+	print('cw: ', current_weight)
+	if item != null:
 		for slot in items.size():
-			print(items[slot])
-		
+			for key in items[slot].keys():
+				if item == key and items[slot][key] > 0:
+					item_slots[slot].get_child(0).show()
+					item_slots[slot].get_child(0).set_text('x' + str(items[slot][key]))
+				elif item == key and items[slot][key] == 0:
+					item_slots[slot].get_child(0).hide()
 		
 		
