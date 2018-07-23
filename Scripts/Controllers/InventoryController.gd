@@ -80,7 +80,6 @@ func _physics_process(delta):
 
 # Updates selected slot
 func _change_selected(selected_slot):
-	print(items)
 	selected_slot_node = item_slots[selected_slot]
 	$ColorRect.set_global_position(selected_slot_node.get_global_position())
 
@@ -116,7 +115,7 @@ func add_item(item_id, amount):
 						return
 		elif (current_weight + item_weight > maximum_weight):
 			print("You can't carry more items!!!") # TODO: handle in-game error
-	
+			
 	file.close()
 	# TODO: Proper handling errors
 
@@ -142,7 +141,11 @@ func remove_item(item_id, amount):
 					return
 
 func _update_inventory(item):
-	print('cw: ', current_weight)
+	
+	Globals.set_player_weight(current_weight)
+	
+	print(item)
+	
 	if item != null:
 		for slot in items.size():
 			for key in items[slot].keys():
