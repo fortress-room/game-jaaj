@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+# MOVEMENT VARIABLES
 var motion = Vector2()
 var ground = Vector2(0, -1)
 
@@ -8,6 +9,8 @@ const JUMP_HEIGHT = -500
 
 var speed = 200
 
+########################################
+# ANIMATION VARIABLES
 enum {
 	IDLE,
 	WALKING,
@@ -17,6 +20,12 @@ var state = IDLE
 
 var current_animation = 'default'
 var old_animation = 'default'
+
+########################################
+
+# MISC
+var carrying_weight = 0
+
 
 func _physics_process(delta):
 	_move(delta)
@@ -47,14 +56,14 @@ func _move(delta):
 		if Input.is_action_pressed("ui_left"):
 			_play_animation()
 		elif Input.is_action_pressed("ui_right"):
-			print('bilu')
+			_play_animation()
 	
 	if Input.is_action_pressed("ui_down"):
 		_play_animation()
 		if Input.is_action_pressed("ui_left"):
 			_play_animation()
 		elif Input.is_action_pressed("ui_right"):
-			print('bolu')
+			_play_animation()
 	
 	
 func _play_animation():
