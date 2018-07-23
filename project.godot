@@ -11,8 +11,12 @@ config_version=3
 [application]
 
 config/name="Game Jaaj"
-run/main_scene="res://Scenes/Map/Test.tscn"
+run/main_scene="res://Scenes/Map/Testiland.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://Scripts/Controllers/Globals.gd"
 
 [display]
 
