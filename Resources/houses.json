@@ -1,0 +1,58 @@
+{
+  	"level_01": [
+		{
+			"houseName": "Simple one",
+			"resources": [{
+				"Madeira": 2,
+				"Pedregulho": 2,
+				"Minério de Ferro": 2
+			}]
+		},
+		{
+			"houseName": "Simple two",
+			"resources": [{
+				"Madeira": 2,
+				"Pedregulho": 2,
+				"Minério de Ferro": 2
+		}]
+	}],
+
+	"level_02": [
+		{
+			"houseName": "Inter one",
+			"resources": [{
+				"Madeira": 12,
+				"Pedregulho": 2,
+				"Ferro": 10,
+				"Madeira Refinada": 10
+			}]
+		  },
+		{
+			"houseName": "Inter two",
+			"resources": [{
+				"Madeira": 2,
+				"Pedregulho": 2,
+				"Ferro": 50
+		}]
+			}],
+
+		"level_03": [
+			{
+				"houseName": "Harder one",
+				"resources": [{
+					"Madeira": 30,
+					"Pedra Processada": 50,
+					"Ferro": 25,
+					"Madeira Refinada": 80
+				}]
+			  },
+			{
+				"houseName": "Harder two",
+				"resources": [{
+					"Madeira": 50,
+					"Pedra Processada": 25,
+					"Ferro": 10,
+					"Madeira Refinada": 100
+			}]
+		}]
+}

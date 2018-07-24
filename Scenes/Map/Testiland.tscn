@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Menu/UI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Prps/Item.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Buildings/HouseLot.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -37,5 +38,7 @@ position = Vector2( 330, 281 )
 [node name="Item6" parent="." index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 176, 326 )
+
+[node name="HouseLot" parent="." index="8" instance=ExtResource( 4 )]
 
 
