@@ -51,22 +51,40 @@ func _move(delta):
 	motion = move_and_slide(motion, ground)
 	
 	# Animation control handlers
+	if Input.is_action_pressed("ui_left") and !Input.is_action_pressed("ui_down") and !Input.is_action_pressed("ui_up"):
+		_play_animation('w_l')
+		speed = 200
+	elif Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_down") and !Input.is_action_pressed("ui_up"):
+		_play_animation('w_r')
+		speed = 200
+		
 	if Input.is_action_pressed("ui_up"):
-		_play_animation()
 		if Input.is_action_pressed("ui_left"):
-			_play_animation()
+			_play_animation('w_ul')
+			speed = 150
 		elif Input.is_action_pressed("ui_right"):
-			_play_animation()
+			_play_animation('w_ur')
+			speed = 150
+		else:
+			_play_animation('w_u')
+			speed = 200
 	
 	if Input.is_action_pressed("ui_down"):
-		_play_animation()
 		if Input.is_action_pressed("ui_left"):
-			_play_animation()
+			_play_animation('w_dl')
+			speed = 150
 		elif Input.is_action_pressed("ui_right"):
-			_play_animation()
+			_play_animation('w_dr')
+			speed = 150
+		else:
+			_play_animation('w_d')
+			speed = 200
 	
 	
-func _play_animation():
+	
+func _play_animation(animation):
+	print(animation)
+	current_animation = animation
 	if current_animation != old_animation:
-		# TODO: play new animation
+		$AnimatedSprite.play(animation)
 		old_animation = current_animation

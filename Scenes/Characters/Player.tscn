@@ -1,11 +1,100 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Scripts/Character/PlayerMove.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Player/walking/baixo1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Player/walking/baixo2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Player/walking/baixo3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Player/walking/baixo4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Player/walking/baixo5.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima1-esq.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima2-esq.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima3-esq.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima4-esq.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima5-esq.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima4.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-cima5.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo3.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo4.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo5.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites/Player/walking/cima1.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Sprites/Player/walking/cima2.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Sprites/Player/walking/cima3.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sprites/Player/walking/cima4.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Sprites/Player/walking/cima5.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo1-dir.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo2-dir.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo3-dir.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo4-dir.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Sprites/Player/walking/diagonal-baixo5-dir.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal1.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal2.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal3.png" type="Texture" id=34]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal4.png" type="Texture" id=35]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal5.png" type="Texture" id=36]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal1-esq.png" type="Texture" id=37]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal2-esq.png" type="Texture" id=38]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal3-esq.png" type="Texture" id=39]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal4-esq.png" type="Texture" id=40]
+[ext_resource path="res://Assets/Sprites/Player/walking/horizontal5-esq.png" type="Texture" id=41]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 20, 20 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "w_d",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "w_ul",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "w_ur",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "w_dl",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "w_u",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "w_dr",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "w_r",
+"speed": 9.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "w_l",
+"speed": 9.0
+} ]
 
 [node name="Player" type="KinematicBody2D" index="0" groups=[
 "player",
@@ -22,23 +111,13 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ColorRect" type="ColorRect" parent="." index="1"]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 1, 1, 1, 1 )
-_sections_unfolded = [ "Rect" ]
+scale = Vector2( 0.139104, 0.139104 )
+frames = SubResource( 2 )
+animation = "w_r"
+frame = 5
+playing = true
+_sections_unfolded = [ "Transform" ]
 
 

@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Prps/Item.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Buildings/HouseLot.tscn" type="PackedScene" id=4]
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Instances" type="YSort" parent="." index="0"]
 
